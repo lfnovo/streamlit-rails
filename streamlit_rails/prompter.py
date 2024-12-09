@@ -20,8 +20,10 @@ def find_project_root():
     raise FileNotFoundError("Could not find project root (no pyproject.toml found)")
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
-project_root = find_project_root()
-prompt_path = os.path.join(project_root, os.environ.get("PROMPT_PATH", "prompts"))
+prompt_path = os.environ.get("PROMPT_PATH")
+if not prompt_path:
+    project_root = find_project_root()
+    prompt_path = os.path.join(project_root, "prompts")
 
 env = Environment(
     loader=FileSystemLoader(
