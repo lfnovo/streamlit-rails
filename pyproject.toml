@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "streamlit-rails"
+version = "0.1.0"
+description = ""
+authors = ["LUIS NOVO <lfnovo@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "<3.14,>=3.10"
+streamlit = "^1.40.2"
+langchain = "^0.3.9"
+pydantic = "^2.10.2"
+langgraph = "^0.2.53"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
